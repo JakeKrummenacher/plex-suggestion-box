@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie/TV Show Search</title>
+    <script>
+        function toggleTvInputs() {
+            const type = document.getElementById('type').value;
+            const tvInputs = document.getElementById('tv-inputs');
+            tvInputs.style.display = (type === 'tv') ? 'flex' : 'none';
+        }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="bg-gray-100 min-h-screen flex items-start justify-center p-4">
+
+    <div class="bg-white shadow-2xl rounded-3xl p-8 max-w-md w-full space-y-6">
+        <h1 class="text-3xl font-semibold text-center text-gray-800">Find Movies & TV Shows</h1>
+        
+        <form method="post" action="/" class="space-y-4">
+            <div>
+                <label for="type" class="block text-gray-600 mb-2">Select type</label>
+                <select name="type" id="type" onchange="toggleTvInputs()" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500">
+                    <option value="movie">Movie</option>
+                    <option value="tv">TV Show</option>
+                </select>
+            </div>
+
+            <div>
+                <input type="text" name="title" placeholder="Enter title..." required
+                    class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500" />
+            </div>
+
+            <div id="tv-inputs" class="space-x-2 hidden">
+                <input type="number" name="season" placeholder="Season" min="1"
+                    class="w-1/2 p-3 border rounded-lg focus:ring-2 focus:ring-blue-500" />
+                <input type="number" name="episode" placeholder="Episode" min="1"
+                    class="w-1/2 p-3 border rounded-lg focus:ring-2 focus:ring-blue-500" />
+            </div>
+
+            <button type="submit"
+                class="w-full py-3 rounded-lg bg-black text-white font-semibold hover:bg-gray-900 transition">Search</button>
+        </form>
+    </div>
+
+</body>
+</html>
