@@ -25,7 +25,10 @@
                     </li>
                 {% endfor %}
             </ul>
-
+            <div class="w-full py-3 flex-cols-2 items-center gap-2">
+                <h1>Enter password to add to queue</h1>
+                <input type="password" name="passkey" value="" required class="w-full py-3 rounded-lg border border-black"></input>
+            </div>
             <button type="submit"
                 class="w-full py-3 rounded-lg bg-black text-white font-semibold hover:bg-gray-900 transition">Add to Queue</button>
         </form>
